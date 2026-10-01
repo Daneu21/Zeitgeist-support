@@ -93,6 +93,10 @@
   .btn:hover { background: var(--accent-600); color: var(--bg); }
   .btn:active { background: var(--accent-700); }
 
+  .btn-secondary { background: transparent; color: var(--text); border: 1px solid color-mix(in srgb, var(--text) 25%, transparent); }
+  .btn-secondary:hover { background: color-mix(in srgb, var(--text) 7%, transparent); color: var(--text); }
+  .support p { margin: 0 0 20px; color: var(--neutral-800); text-wrap: pretty; }
+
   .faq { display: flex; flex-direction: column; gap: 4px; margin: 0 -20px; }
   details { border-radius: var(--radius-md); }
   details[open] { background: var(--neutral-200); }
@@ -163,6 +167,12 @@
         <p>Schick mir eine kurze E-Mail: welches Gerät, welche iOS- oder macOS-Version und was passiert ist. Ein Screenshot hilft.</p>
       </details>
     </div>
+
+    <section class="support">
+      <h2>Zeitgeist unterstützen</h2>
+      <p>Zeitgeist entsteht in meiner Freizeit. Wenn dir die App gefällt, freue ich mich über einen Kaffee.</p>
+      <a class="btn btn-secondary" href="https://ko-fi.com/danielneu" target="_blank" rel="noopener">Auf Ko-fi unterstützen</a>
+    </section>
   </main>
 
   <footer>© 2026 Daniel Neugebauer · Zeitgeist für iOS und macOS</footer>
