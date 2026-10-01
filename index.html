@@ -2,181 +2,170 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zeitgeist – Support</title>
 <meta name="description" content="Support und häufige Fragen zur Zeitgeist App – tracke deine Lernzeit, bleib fokussiert.">
 <style>
-  :root {
-    --bg: #F7F6F4;
-    --card: #FFFFFF;
-    --ink: #1C1C1E;
-    --muted: #6E6E73;
-    --teal: #3D867D;
-    --teal-dark: #107169;
-    --teal-light: #E4F0EE;
-    --green: #12A596;
-    --radius: 20px;
+  @font-face {
+    font-family: "Caprasimo"; font-style: normal; font-weight: 400; font-display: swap;
+    src: url("fonts/caprasimo-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @font-face {
+    font-family: "Caprasimo"; font-style: normal; font-weight: 400; font-display: swap;
+    src: url("fonts/caprasimo-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Figtree"; font-style: normal; font-weight: 400 700; font-display: swap;
+    src: url("fonts/figtree-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+    font-family: "Figtree"; font-style: normal; font-weight: 400 700; font-display: swap;
+    src: url("fonts/figtree-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  :root {
+    --bg: #f5ead8;
+    --text: #201e1d;
+    --accent: #c67139;
+    --accent-600: #b2622d;
+    --accent-700: #8c491a;
+    --accent-800: #643312;
+    --neutral-200: #eee7db;
+    --neutral-700: #645c50;
+    --neutral-800: #474238;
+    --radius-md: 16px;
+    --font-heading: "Caprasimo", system-ui, sans-serif;
+    --font-body: "Figtree", system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
     background: var(--bg);
-    color: var(--ink);
-    line-height: 1.6;
+    color: var(--text);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+  a { color: var(--accent-700); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-800); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ::selection { background: color-mix(in srgb, var(--accent) 30%, transparent); }
 
-  header { text-align: center; padding: 72px 0 48px; }
-  .logo {
-    display: inline-block;
-    background: var(--card);
-    border-radius: 999px;
-    padding: 10px 26px;
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  }
-  .logo .dot { color: var(--green); }
-  header p.tagline {
-    margin-top: 18px;
-    font-style: italic;
-    color: var(--muted);
+  .page {
+    max-width: 640px;
+    margin-left: clamp(24px, 12vw, 200px);
+    margin-right: 24px;
+    padding-bottom: 96px;
     font-size: 17px;
+    line-height: 1.65;
   }
 
-  h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.3px; margin: 48px 0 16px; }
-  h1:first-of-type { margin-top: 0; }
-
-  .card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 26px 28px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
-  }
-
-  .contact { text-align: center; }
-  .contact p { color: var(--muted); margin-bottom: 20px; }
-  .btn {
-    display: inline-block;
-    background: var(--ink);
-    color: #fff;
+  header { padding: 48px 0 80px; }
+  .brand {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    color: var(--text);
     text-decoration: none;
-    font-weight: 600;
-    padding: 14px 32px;
-    border-radius: 999px;
-    transition: opacity .15s;
   }
-  .btn:hover { opacity: .8; }
-  .contact .hint { font-size: 14px; margin-top: 16px; margin-bottom: 0; }
+  .brand:hover { color: var(--text); }
 
-  details {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 0;
-    margin-bottom: 12px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
-    overflow: hidden;
+  h1, h2 { font-family: var(--font-heading); font-weight: 400; letter-spacing: -0.015em; }
+  h1 { font-size: 44px; line-height: 1.1; margin: 0 0 20px; }
+  h2 { font-size: 28px; line-height: 1.12; margin: 96px 0 20px; }
+
+  .lead { margin: 0 0 28px; color: var(--neutral-800); text-wrap: pretty; }
+  .contact { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+  .contact span { font-size: 15px; color: var(--neutral-700); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 10.5px 15.8px;
+    font-family: var(--font-heading);
+    font-size: 14px; line-height: 1.2;
+    color: var(--bg); background: var(--accent);
+    border-radius: 999px;
+    text-decoration: none;
   }
+  .btn:hover { background: var(--accent-600); color: var(--bg); }
+  .btn:active { background: var(--accent-700); }
+
+  .faq { display: flex; flex-direction: column; gap: 4px; margin: 0 -20px; }
+  details { border-radius: var(--radius-md); }
+  details[open] { background: var(--neutral-200); }
   summary {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 16px 20px;
+    font-weight: 600;
     cursor: pointer;
-    font-weight: 650;
-    font-size: 16.5px;
-    padding: 20px 24px;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
+    border-radius: var(--radius-md);
   }
   summary::-webkit-details-marker { display: none; }
-  summary::after {
-    content: "+";
-    flex-shrink: 0;
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: var(--teal-light);
-    color: var(--teal-dark);
-    font-weight: 600;
-    display: flex; align-items: center; justify-content: center;
-    transition: transform .2s;
-  }
-  details[open] summary::after { transform: rotate(45deg); }
-  details .a { padding: 0 24px 20px; color: #3a3a3c; }
-  details .a p + p { margin-top: 10px; }
+  summary::after { content: "+"; color: var(--accent-700); }
+  summary:hover { color: var(--accent-700); }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 0; padding: 0 20px 20px; color: var(--neutral-800); }
 
-  footer {
-    text-align: center;
-    margin-top: 64px;
-    color: var(--muted);
-    font-size: 14px;
-  }
-  footer a { color: var(--teal-dark); }
+  footer { margin-top: 112px; font-size: 14px; color: var(--neutral-700); }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
 
   <header>
-    <div class="logo">Zeitgeist<span class="dot">.</span></div>
-    <p class="tagline">Kleine Sessions, große Wirkung.</p>
+    <a class="brand" href="./">Zeitgeist</a>
   </header>
 
-  <h1>Kontakt</h1>
-  <div class="card contact">
-    <p>Du hast eine Frage, einen Fehler gefunden oder einen Feature-Wunsch?<br>Schreib mir – ich lese jede Nachricht.</p>
-    <a class="btn" href="mailto:anfragen.zeitgeist@gmail.com?subject=Zeitgeist%20Support">E-Mail schreiben</a>
-    <p class="hint">anfragen.zeitgeist@gmail.com</p>
-  </div>
+  <main>
+    <h1>Support</h1>
+    <p class="lead">Frage, Fehler oder Wunsch für eine neue Funktion? Schreib mir eine E-Mail. Ich antworte meistens innerhalb weniger Tage.</p>
+    <div class="contact">
+      <a class="btn" href="mailto:anfragen.zeitgeist@gmail.com?subject=Zeitgeist%20Support">E-Mail schreiben</a>
+      <span>anfragen.zeitgeist@gmail.com</span>
+    </div>
 
-  <h1>Häufige Fragen</h1>
+    <h2>Häufige Fragen</h2>
+    <div class="faq">
+      <details name="faq">
+        <summary>Wie tracke ich meine Lernzeit?</summary>
+        <p>Öffne den Tab „Tracken“, wähle bei Bedarf ein Thema und tippe auf „Start“. Die Session wird aufgezeichnet und erscheint danach in deinen Statistiken.</p>
+      </details>
+      <details name="faq">
+        <summary>Was ist der Unterschied zwischen Pomodoro und Timer?</summary>
+        <p>Pomodoro teilt deine Zeit in feste Fokusblöcke mit Pausen. Der Timer läuft einfach, bis du ihn stoppst. Beide zählen gleich für Statistiken, Ziele und Serie.</p>
+      </details>
+      <details name="faq">
+        <summary>Wofür sind Themen da?</summary>
+        <p>Ein Thema ist ein Fach oder Projekt mit eigener Farbe. Ordnest du Sessions Themen zu, siehst du, wohin deine Zeit geht. Neue Themen legst du in der Themenauswahl an.</p>
+      </details>
+      <details name="faq">
+        <summary>Wie funktioniert die Serie?</summary>
+        <p>Die Flamme zählt, an wie vielen Tagen in Folge du gelernt hast. Lässt du einen Tag aus, beginnt sie wieder bei null. Auch kurze Sessions zählen.</p>
+      </details>
+      <details name="faq">
+        <summary>Wie ändere ich mein Tages- oder Wochenziel?</summary>
+        <p>Im Tab „Statistiken“ auf das Stift-Symbol der Kachel „Heute“ oder „Wochenziel“ tippen und die Zeit einstellen.</p>
+      </details>
+      <details name="faq">
+        <summary>Was bedeutet der Countdown?</summary>
+        <p>Er zeigt die Tage bis zu einem Datum, das du festlegst, etwa eine Prüfung oder der Semesterstart. Datum und Titel änderst du über das Stift-Symbol.</p>
+      </details>
+      <details name="faq">
+        <summary>Werden meine Daten zwischen Geräten synchronisiert?</summary>
+        <p>Ja, über deine private iCloud. Dafür musst du auf allen Geräten mit derselben Apple-ID angemeldet sein, und iCloud muss für Zeitgeist aktiviert sein.</p>
+      </details>
+      <details name="faq">
+        <summary>Ich habe einen Fehler gefunden.</summary>
+        <p>Schick mir eine kurze E-Mail: welches Gerät, welche iOS- oder macOS-Version und was passiert ist. Ein Screenshot hilft.</p>
+      </details>
+    </div>
+  </main>
 
-  <details>
-    <summary>Wie tracke ich meine Lernzeit?</summary>
-    <div class="a"><p>Öffne den Tab <strong>Tracken</strong>, wähle optional ein Thema und tippe auf <strong>Start</strong>. Zeitgeist zeichnet die Session automatisch auf – danach findest du sie in deinen Statistiken.</p></div>
-  </details>
-
-  <details>
-    <summary>Was ist der Unterschied zwischen Pomodoro und Timer?</summary>
-    <div class="a"><p><strong>Pomodoro</strong> arbeitet in festen Fokus-Intervallen mit Pausen dazwischen – ideal, um konzentriert zu bleiben. Der <strong>Timer</strong> läuft frei, solange du lernst. Beide Modi zählen für deine Statistiken, Ziele und Serie.</p></div>
-  </details>
-
-  <details>
-    <summary>Wofür sind Themen da?</summary>
-    <div class="a"><p>Mit Themen ordnest du jede Session einem Fach oder Projekt zu – jeweils mit eigener Farbe. So siehst du auf einen Blick, wofür du deine Zeit einsetzt. Neue Themen legst du direkt über die Themenauswahl an.</p></div>
-  </details>
-
-  <details>
-    <summary>Wie funktioniert die Serie (Flamme)?</summary>
-    <div class="a"><p>Lernst du an aufeinanderfolgenden Tagen, wächst deine Serie – die Flamme zeigt, wie viele Tage du dranbleibst. Verpasst du einen Tag, beginnt die Serie von vorn. Kleine Sessions zählen auch!</p></div>
-  </details>
-
-  <details>
-    <summary>Wie ändere ich mein Tages- oder Wochenziel?</summary>
-    <div class="a"><p>Tippe im Tab <strong>Statistiken</strong> auf das Stift-Symbol der jeweiligen Kachel („Heute“ bzw. „Wochenziel“) und stelle die gewünschte Zeit ein.</p></div>
-  </details>
-
-  <details>
-    <summary>Was bedeutet der Countdown?</summary>
-    <div class="a"><p>Der Countdown zeigt, wie viele Tage bis zu deinem persönlichen Zieldatum bleiben – zum Beispiel Uni-Start oder Prüfung. Über das Stift-Symbol auf der Kachel kannst du Datum und Titel anpassen.</p></div>
-  </details>
-
-  <details>
-    <summary>Werden meine Daten zwischen Geräten synchronisiert?</summary>
-    <div class="a"><p>Ja. Deine Lernzeiten werden über deine <strong>private iCloud</strong> synchronisiert. Voraussetzung: Du bist auf beiden Geräten mit derselben Apple-ID angemeldet und iCloud ist für Zeitgeist aktiviert.</p></div>
-  </details>
-
-  <details>
-    <summary>Ich habe einen Fehler gefunden – was nun?</summary>
-    <div class="a"><p>Schreib mir eine kurze E-Mail mit deinem Gerät, deiner iOS-/macOS-Version und was passiert ist. Screenshots helfen sehr. Ich kümmere mich so schnell wie möglich darum.</p></div>
-  </details>
-
-  <footer>
-    <p>© 2026 Daniel Neugebauer · <a href="mailto:anfragen.zeitgeist@gmail.com">Kontakt</a></p>
-    <p>Zeitgeist für iOS &amp; macOS</p>
-  </footer>
-
+  <footer>© 2026 Daniel Neugebauer · Zeitgeist für iOS und macOS</footer>
 </div>
 </body>
 </html>
